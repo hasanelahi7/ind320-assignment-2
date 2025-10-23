@@ -1,3 +1,4 @@
 streamlit_app/.streamlit/secrets.toml
 *.ipynb_checkpoints/
 .DS_Store
+.streamlit/
