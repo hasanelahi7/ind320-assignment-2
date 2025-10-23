@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import os 
 
 # Configure page
 st.set_page_config(
@@ -13,7 +14,9 @@ st.set_page_config(
 # Load data with caching
 @st.cache_data
 def load_data():
-    df = pd.read_csv('open-meteo-subset-1.csv')
+    # Use the path relative to this file
+    csv_path = os.path.join(os.path.dirname(__file__), 'open-meteo-subset-1.csv')
+    df = pd.read_csv(csv_path)
     return df
 
 # Sidebar navigation
